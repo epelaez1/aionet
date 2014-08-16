@@ -1,4 +1,6 @@
 class ZonesController < ApplicationController
+	before_action :authenticate_user!
+	layout 'zone'
 	
 	def new 
 		@newzone = User.find(current_user.id).zones.new
