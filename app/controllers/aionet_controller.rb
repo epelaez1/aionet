@@ -1,26 +1,24 @@
 class AionetController < ApplicationController
 	before_action :authenticate_user!
 	def index
-		userLogedId = current_user.id
-		@userzones = User.find(userLogedId).zones.all
+		@userzones = current_user.zones
 		
 		if @userzones == []
 			redirect_to new_zone_path
 			return
 		end
 		
-		@zones = []
-		@zones << eachzone
-
-
-		render 'index'
+		zones = eachZone
+		redirect_to "/zones?zone=#{zones.first}"
 	end
 
 	private
-	
-	def eachzone
+
+	def eachZone
+		returnedzones = []
 		@userzones.each do |databaseZoneRow|
-			databaseZoneRow.zone
+			returnedzones << databaseZoneRow.zone
 		end
+		returnedzones
 	end
 end

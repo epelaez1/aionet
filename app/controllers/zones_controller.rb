@@ -1,9 +1,15 @@
 class ZonesController < ApplicationController
 	before_action :authenticate_user!
 	layout 'zone'
-	
+	def index
+		if hasUserThisZone?(params[:zone])
+			render params[:zone]
+		else
+			redirect_to root_path
+		end
+	end
 	def new 
-		@newzone = User.find(current_user.id).zones.new
+		@newzone = current_user.zones.new
 		@zonesUserCanAdd = zonesUserHasnt
 	end
 	def create
@@ -19,7 +25,7 @@ class ZonesController < ApplicationController
 
 	private
 	def hasUserThisZone?(zone)
-		User.find(current_user.id).zones.find_by(:zone => zone)
+		current_user.zones.find_by(:zone => zone)
 	end
 	
 	def allZones
@@ -28,12 +34,12 @@ class ZonesController < ApplicationController
 	
 	
 	def addZoneToUser
-		addzone = User.find(current_user.id).zones.new :zone => params[:zone]
+		addzone = current_user.zones.new :zone => params[:zone]
 		addzone.save
 	end
 
 	def paramPermited?
-		params[:zone] == "social"
+		allZones.include?(params[:zone])
 	end
 	
 	def zonesUserHasnt
