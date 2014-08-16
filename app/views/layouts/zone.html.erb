@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+Logged in as <strong><%= current_user.email %></strong>.
+<%= link_to 'Edit profile', edit_user_registration_path %> |
+<%= link_to "Logout", destroy_user_session_path, method: :delete %><br />
+<% if @zonesToAdd != 0 %>
+	<%= link_to("Add Zone", new_zone_path) %>
+<% end %>
+<% @zonesToGo.each do |zone| %>
+ , <%= link_to(zone, zone_path(:zone => zone)) %>
+<% end %>
 
 <%= yield %>
 

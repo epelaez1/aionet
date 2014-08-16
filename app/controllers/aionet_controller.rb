@@ -9,7 +9,7 @@ class AionetController < ApplicationController
 		end
 		
 		zones = eachZone
-		redirect_to "/zones?zone=#{zones.first}"
+		redirect_to zones_path(:zone => zones.first)
 	end
 
 	private
