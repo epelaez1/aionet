@@ -1,6 +1,8 @@
-<div>
-	<%= form_for @newzone do |f| %>
-	    <%= hidden_field_tag 'zone', 'social'  %>
-		<%= f.submit "Social", class: "socialbutton" %>
-	<% end %>
-</div>
+<% @zonesUserCanAdd.each do |zone| %>
+	<div>
+		<%= form_for @newzone do |f| %>
+		    <%= hidden_field_tag 'zone', zone  %>
+			<%= f.submit zone, class: "socialbutton" %>
+		<% end %>
+	</div>
+<% end %>
