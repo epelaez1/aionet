@@ -13,10 +13,11 @@ Logged in as <strong><%= current_user.email %></strong>.
 <% if @zonesToAdd %>
 	<%= link_to("Add Zone", new_zone_path) %>
 <% end %>
-<% @zonesToGo.each do |zone| %>
- , <%= link_to(zone, zone_path(:zone => zone)) %>
+<% if @zonesToGo %>
+	<% @zonesToGo.each do |zone| %>
+	 , <%= link_to(zone, zone_path(:zone => zone)) %>
+	<% end %>
 <% end %>
-
 <%= yield %>
 
 </body>

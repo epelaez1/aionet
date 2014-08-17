@@ -7,7 +7,7 @@ class ZonesController < ApplicationController
 			if hasUserNetworksAt?(params[:zone])
 				@zonesToGo = allZones - zonesUserHasnt - [params[:zone]]
 				@canUserAddNewZone = canUserAddNewZone?
-				render params[:zone]
+				redirect_to "/zones/#{params[:zone]}"
 				return
 			else
 				redirect_to new_network_path(:zone => params[:zone])
@@ -16,6 +16,9 @@ class ZonesController < ApplicationController
 		else
 			redirect_to root_path
 		end
+	end
+	def social
+		render 'social'
 	end
 	def new
 		if canUserAddNewZone?
