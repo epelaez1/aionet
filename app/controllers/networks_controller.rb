@@ -21,7 +21,7 @@ class NetworksController < ApplicationController
 		current_user.zones.find_by(:zone => params[:zone])
 	end
 	def allNetworks 
-	  	allnetworks = {"social" => ["facebook","twitter"]}
+	  	allnetworks = {"social" => ["twitter"]}
 	end
 	def networksOfCurrentZone
 		allNetworks[params[:zone]]
