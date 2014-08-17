@@ -1,32 +1,40 @@
 class NetworksController < ApplicationController
 	before_action :authenticate_user!
 	layout 'networks'
-	
-	allNetworks = {"social" => ["facebook","twitter"]}
-	currentZone = params[:zone]
-	networksOfCurrentZone = allnetworks[currentZone]
-	
+		
 	def new
-		if hasUserThisZone
+		if !params[:zone]
+			redirect_to root_path
+			return
+		end 
+		if hasUserThisZone?(params[:zone])
+			@currentZone = params[:zone]
 			@networksToAdd = networksUserHastn
 			render 'new'
+			return
 		else
 			redirect_to root_path
+			return
 		end
 	end
 	def hasUserThisZone?(zone)
-		current_user.zones.find_by(:zone => currentZone)
+		current_user.zones.find_by(:zone => params[:zone])
 	end
-
+	def allNetworks 
+	  	allnetworks = {"social" => ["facebook","twitter"]}
+	end
+	def networksOfCurrentZone
+		allNetworks[params[:zone]]
+	end
 	def networksUserHas
 		networksreturned = []
-		current_user.zones.find_by(:zone => currentZone).networks.find_by(:network => network).each do |network|
-			networksreturned << network
+		current_user.zones.find_by(:zone => params[:zone]).networks.each do |networkRow|
+			networksreturned << networkRow.network
 		end 	
 		networksreturned
 	end
 	
 	def networksUserHastn
-		networksreturned = NetworksOfCurrentZone - networksUserHas
+		networksreturned = 	networksOfCurrentZone - networksUserHas
 	end
 end

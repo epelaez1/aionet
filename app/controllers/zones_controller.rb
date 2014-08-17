@@ -4,10 +4,15 @@ class ZonesController < ApplicationController
 
 	def index
 		if hasUserThisZone?(params[:zone])
-			@zonesToGo = allZones - zonesUserHasnt - [params[:zone]]
-			@canUserAddNewZone = canUserAddNewZone?
-			render params[:zone]
-			
+			if hasUserNetworksAt?(params[:zone])
+				@zonesToGo = allZones - zonesUserHasnt - [params[:zone]]
+				@canUserAddNewZone = canUserAddNewZone?
+				render params[:zone]
+				return
+			else
+				redirect_to new_network_path(:zone => params[:zone])
+				return
+			end	
 		else
 			redirect_to root_path
 		end
@@ -17,6 +22,7 @@ class ZonesController < ApplicationController
 			@newzone = current_user.zones.new
 			@zonesUserCanAdd = zonesUserHasnt
 			render :layout => 'newzone'
+			return
 		else
 			redirect_to zones_path
 		end
@@ -33,6 +39,9 @@ class ZonesController < ApplicationController
 	end
 
 	private
+	def hasUserNetworksAt?(zone)
+		current_user.zones.find_by(:zone => zone).networks != []
+	end
 	def canUserAddNewZone?
 		zonesUserHasnt.count != 0
 	end
