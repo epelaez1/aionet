@@ -18,7 +18,21 @@ class ZonesController < ApplicationController
 		end
 	end
 	def social
-		render 'social'
+		if hasUserThisZone?("social")	
+			@client = Twitter::REST::Client.new do |config|
+		      config.consumer_key        = ENV['TWITTER_KEY']
+		      config.consumer_secret     = ENV['TWITTER_SECRET_KEY']
+		      config.access_token        = ENV['TWITTER_TOKEN']
+		  	  config.access_token_secret = ENV['TWITTER_SECRET_TOKEN']
+	    	end
+			@networksUserCanGo = networksUserHasAt("social")
+			@networksUserCanAdd = networksUserHasntAt("social")
+			render 'social'
+			return
+		else
+			redirect_to root_path
+			return
+		end
 	end
 	def new
 		if canUserAddNewZone?
@@ -48,9 +62,7 @@ class ZonesController < ApplicationController
 	def canUserAddNewZone?
 		zonesUserHasnt.count != 0
 	end
-	def hasUserThisZone?(zone)
-		current_user.zones.find_by(:zone => zone)
-	end
+	
 	
 	
 	

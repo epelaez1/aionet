@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
 		end
 		returnedzones
 	end
+
+	def hasUserThisZone?(zone)
+		current_user.zones.find_by(:zone => zone)
+	end
 	
 	def networksUserHasAt(zone)
 		networksreturned = []
@@ -26,7 +30,15 @@ class ApplicationController < ActionController::Base
 		end 	
 		networksreturned
 	end
+
+	def networksOf(zone)
+		allNetworks[zone]
+	end
 	
+	
+	def networksUserHasntAt(zone)
+		networksreturned = 	networksOf(zone) - networksUserHasAt(zone)
+	end
 
 
 	protected

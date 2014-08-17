@@ -1,0 +1,29 @@
+		<span class="miniBox ">
+			<div class="row headerRow twitterHeader">
+			</div>	
+			<div class="row bodyRow scrollBar">
+			<% @client.home_timeline.each do |tweet| %>
+				<div class="col-md-12 tweet ">
+						<span class="tweetImageBox">
+							<%=image_tag src=tweet.user.profile_image_url, :class => "tweetImage" %>
+						</span>
+						<span class="tweetBody">
+							<div class="tweetHeader">
+								<%=tweet.user.name%>
+							</div>
+							<div class="tweetText">
+								<%=  tweet.text%>
+							</div>
+							<div class="row footerRow">
+						</div>
+						</span>
+						<div class="row tweetFooter">
+						</div>
+						
+				</div>
+			<% end %>
+
+			</div>
+			<div class="row footerRow">
+			</div>
+		</span>	

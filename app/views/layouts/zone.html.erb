@@ -1,24 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Aionet</title>
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-Logged in as <strong><%= current_user.email %></strong>.
-<%= link_to 'Edit profile', edit_user_registration_path %> |
-<%= link_to "Logout", destroy_user_session_path, method: :delete %><br />
-<% if @zonesToAdd %>
-	<%= link_to("Add Zone", new_zone_path) %>
-<% end %>
-<% if @zonesToGo %>
-	<% @zonesToGo.each do |zone| %>
-	 , <%= link_to(zone, zone_path(:zone => zone)) %>
-	<% end %>
-<% end %>
-<%= yield %>
+<html lang="en">
+	<head>
+		<!-- <link rel="stylesheet" href="foundation.min.css"/>
+		<link rel="stylesheet" type="text/css"  href="css.css"/> -->
+		 <%= stylesheet_link_tag    'application', media: 'all'%>
+  		 <%= javascript_include_tag 'application'%>
+  		 <%= csrf_meta_tags %>
+  		 <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+	</head>
 
-</body>
+	<body>
+		<div class="row superHeader" >
+			<div class="small-12 columns">
+				<% if @zonesToGo %>
+					<% @zonesToGo.each do |zone| %>
+					 , <%= link_to(zone, zone_path(:zone => zone)) %>
+					<% end %>
+				<% end %>
+
+				<% if @zonesToAdd %>
+					<%= link_to("Add Zone", new_zone_path) %>
+				<% end %>
+			
+		      	Logged in as <strong><%= current_user.email %></strong>.
+		      	<%= link_to 'Edit profile', edit_user_registration_path %> |
+		      	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+		    </div>
+		</div>
+		<div class="aside">
+		<% @networksUserCanGo.each do |network| %>
+			<div class="#{network}">
+				<%= link_to(network, zones_path) %><br />
+			</div>	
+		<% end %>
+		<% if @networksUserCanAdd != [] %>
+		<%= link_to("add Net", new_network_path) %>
+		<% end %>
+		</div>
+		
+			<%= yield %>
+			
+		
+
+
+	</body>
 </html>

@@ -1,0 +1,121 @@
+body{
+	overflow-y:hidden;
+}
+span{
+	display:inline-block;
+}
+/*********************************SUPERHEADER****************************************************/
+.superHeader {
+	background-color	:rgba(189, 189, 189, 1);
+	text-align			:justify;
+	height				:10%;
+	top 				:0px;
+	width 				:95%;
+	right 				:0px;
+	position			:fixed !important;
+	-webkit-transition: background-color 1s; 
+}
+.superHeader:hover {
+	background-color	:rgba(107, 107, 107, 1);
+}
+/*********************************ASIDE*****************************************************/
+.aside {
+	width				:5%;
+	background-color	:rgba(189, 189, 189, 1);
+	text-align			:justify;
+	position			:fixed; 
+	height 				:100%;
+	-webkit-transition: background-color 1s; 
+}
+.aside:hover {
+	background-color	:rgba(107, 107, 107, 1);
+}
+/*********************************CENTRALBOX***************************************************/
+.box{
+	position			:fixed;
+	width 				:95%;
+	right 				:0px;
+	bottom 				:0px;
+	height 				:90%;
+	overflow			:auto; 
+	background-color	:rgba(189, 189, 189, 1); 
+}
+.miniBox{	 
+	width				:33.33%;
+	text-align			:justify;
+	height				:100%;
+	display				:inline-block;
+	float				:left;
+
+}
+
+.row{
+	max-width			: 99999px;
+	border-top			:1px solid grey;
+	border-right		:1px solid grey;
+	border-bottom 		:1px solid grey;
+	border-left			:1px solid grey;
+	word-wrap: break-word;
+}
+.headerRow{
+	height				:8%;
+	font-size			:20px;
+	font-weight			:bolder;
+	background-color	:white; 
+	margin				:1px;
+	margin-bottom		:0px; 
+}
+.bodyRow{
+	overflow			:auto; 
+	overflow-x			:hidden;
+	height				:92%
+}
+.headerIcon{
+	height				:80%;
+	width 				:auto;
+	position:absolute;
+}
+.scrollBar::-webkit-scrollbar{
+	width 				: 10px;
+	border				:1px solid rgba(189, 189, 189, 1) ;
+	border-radius		:20vw;
+	background-color	:white;  
+}
+.scrollBar::-webkit-scrollbar-thumb {
+	width 				: 10px;
+	background-color 	:rgba(189, 189, 189, 1);
+	border-radius		:20vw; 
+}.scrollBar::-webkit-scrollbar-thumb:hover {
+	background-color	:rgba(107, 107, 107, 1); 	
+
+}
+/*********************************TWITTTER*****************************************************/
+.tweet{
+	position			:static;
+	background-color	:white; 
+ 	font-family			:'Coming Soon', cursive;
+ 	margin 				:2px;
+}
+.tweetHeader{
+	font-weight 		:bolder;
+
+}
+.tweetBody{
+	width:78%;
+}
+.tweetImage{
+	border-radius		:15%;
+	width				:auto;
+	height				:100%; 
+}
+.tweetImageBox{
+	width				:15%;
+	float				:left;
+}
+.tweetText{
+	font-size			:100%;
+}
+.tweetFooter{
+	height:10%;
+}
+/*********************************TWITTTER****************************************************/
