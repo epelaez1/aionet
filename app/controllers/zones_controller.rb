@@ -31,8 +31,8 @@ class ZonesController < ApplicationController
 		end
 	end
 	def create
-		if !hasUserThisZone?(params[:zone]) && paramPermited?
-			addZoneToUser
+		if !hasUserThisZone?(params[:zone]) && isThisAZone?(params[:zone])
+			addZoneToUser(params[:zone])
 			redirect_to zones_path(:zone => params[:zone])
 			return
 		else
@@ -52,18 +52,16 @@ class ZonesController < ApplicationController
 		current_user.zones.find_by(:zone => zone)
 	end
 	
-	def allZones
-		allzones = ["social"]
-	end
 	
 	
-	def addZoneToUser
-		addzone = current_user.zones.new :zone => params[:zone]
+	
+	def addZoneToUser(zone)
+		addzone = current_user.zones.new :zone => zone
 		addzone.save
 	end
 
-	def paramPermited?
-		allZones.include?(params[:zone])
+	def isThisAZone?(zone)
+		allZones.include?(zone)
 	end
 	
 	def zonesUserHasnt

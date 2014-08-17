@@ -9,7 +9,7 @@ class NetworksController < ApplicationController
 		end 
 		if hasUserThisZone?(params[:zone])
 			@currentZone = params[:zone]
-			@networksToAdd = networksUserHastn
+			@networksToAdd = networksUserHastnAt(params[:zone])
 			render 'new'
 			return
 		else
@@ -18,23 +18,15 @@ class NetworksController < ApplicationController
 		end
 	end
 	def hasUserThisZone?(zone)
-		current_user.zones.find_by(:zone => params[:zone])
-	end
-	def allNetworks 
-	  	allnetworks = {"social" => ["twitter"]}
-	end
-	def networksOfCurrentZone
-		allNetworks[params[:zone]]
-	end
-	def networksUserHas
-		networksreturned = []
-		current_user.zones.find_by(:zone => params[:zone]).networks.each do |networkRow|
-			networksreturned << networkRow.network
-		end 	
-		networksreturned
+		current_user.zones.find_by(:zone => zone)
 	end
 	
-	def networksUserHastn
-		networksreturned = 	networksOfCurrentZone - networksUserHas
+	def networksOf(zone)
+		allNetworks[zone]
+	end
+	
+	
+	def networksUserHastnAt(zone)
+		networksreturned = 	networksOf(zone) - networksUserHasAt(zone)
 	end
 end

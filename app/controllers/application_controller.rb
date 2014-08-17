@@ -1,7 +1,16 @@
 class ApplicationController < ActionController::Base
 	before_filter :configure_permitted_parameters, if: :devise_controller?
 
-	protected
+	private
+
+	def allNetworks 
+	  	allnetworks = {"social" => ["twitter"]}
+	end
+
+	def allZones
+		allzones = ["social"]
+	end
+	
 	def zonesUserHas
 		returnedzones = []
 		current_user.zones.each do |databaseZoneRow|
@@ -9,6 +18,20 @@ class ApplicationController < ActionController::Base
 		end
 		returnedzones
 	end
+	
+	def networksUserHasAt(zone)
+		networksreturned = []
+		current_user.zones.find_by(:zone => zone).networks.each do |networkRow|
+			networksreturned << networkRow.network
+		end 	
+		networksreturned
+	end
+	
+
+
+	protected
+	
+
 	def configure_permitted_parameters
 		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me) }
 		devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
