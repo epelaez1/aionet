@@ -1,3 +1,9 @@
+<section class="miniBox ">
+<div class="miniboxHeader twitterHeader">
+Twitter
+</div>	
+<div class="miniboxBody scrollBar">
+
 <% @client.home_timeline.each do |tweet| %>
 	
 	<% if tweet.retweet? %>
@@ -48,3 +54,5 @@
 	<% end %>
 
 <% end %>
+	</div>
+		</section>	
