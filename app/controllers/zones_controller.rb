@@ -5,8 +5,7 @@ class ZonesController < ApplicationController
 	def index
 		if hasUserThisZone?(params[:zone])
 			if hasUserNetworksAt?(params[:zone])
-				@zonesToGo = allZones - zonesUserHasnt - [params[:zone]]
-				@canUserAddNewZone = canUserAddNewZone?
+				
 				redirect_to "/zones/#{params[:zone]}"
 				return
 			else
@@ -19,7 +18,9 @@ class ZonesController < ApplicationController
 	end
 	def social
 		
-		if hasUserThisZone?("social")	
+		if hasUserThisZone?("social")
+			@zonesToGo = allZones - zonesUserHasnt - ["social"]
+			@canUserAddNewZone = canUserAddNewZone?	
 			@client = Twitter::REST::Client.new do |config|
 		      config.consumer_key        = ENV['TWITTER_KEY']
 		      config.consumer_secret     = ENV['TWITTER_SECRET_KEY']
