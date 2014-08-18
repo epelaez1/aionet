@@ -30,7 +30,7 @@
 			<% @networksUserCanGo.each do |network| %>
 			<div class="asidebutton active_left"><br />
 			<%= link_to(user_omniauth_authorize_path(network.to_sym)) do %>
-  				<span class="icon-#{network} aside-internal-button"></span> 
+  				<span class="icon-<%=network%> aside-internal-button"></span> 
 			<% end %>
 
 			</div>	
