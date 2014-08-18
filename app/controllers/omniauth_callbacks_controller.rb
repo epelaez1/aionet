@@ -3,7 +3,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     	auth = env["omniauth.auth"]
 
     	@authjson = auth.to_json
-    	render 'zones/auth' layout: 'empty'
+    	render 'zones/auth', :layout => 'empty'
     end
     def twitter
       	auth = env["omniauth.auth"]
