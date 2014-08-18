@@ -1,6 +1,7 @@
 You are now at <%= @currentZone %> zone. 
 You can add the next networks:
 <% @networksToAdd.each do |network| %>
+<% binding.pry %>
 <div class="#{network}add">
 	<%= link_to(network, user_omniauth_authorize_path(network.to_sym)) %><br />
 </div>

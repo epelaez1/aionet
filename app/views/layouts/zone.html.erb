@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<!-- <link rel="stylesheet" href="foundation.min.css"/>
@@ -10,37 +9,37 @@
 	</head>
 
 	<body>
-		<div class="row superHeader" >
-			<div class="small-12 columns">
-				<% if @zonesToGo %>
-					<% @zonesToGo.each do |zone| %>
-					 , <%= link_to(zone, zone_path(:zone => zone)) %>
+		<div class="superHeader" >
+			<div>
+					<% if @zonesToGo %>
+						<% @zonesToGo.each do |zone| %>
+						 , <%= link_to(zone, zone_path(:zone => zone)) %>
+						<% end %>
 					<% end %>
-				<% end %>
 
-				<% if @zonesToAdd %>
-					<%= link_to("Add Zone", new_zone_path) %>
-				<% end %>
-			
-		      	Logged in as <strong><%= current_user.email %></strong>.
-		      	<%= link_to 'Edit profile', edit_user_registration_path %> |
-		      	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					<% if @zonesToAdd %>
+						<%= link_to("Add Zone", new_zone_path) %>
+					<% end %>
+			      	Logged in as <strong><%= current_user.email %></strong>.
+			      	<%= link_to 'Edit profile', edit_user_registration_path %> |
+			      	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 		    </div>
 		</div>
 		<div class="aside">
-		<% @networksUserCanGo.each do |network| %>
-			<div class="#{network}">
-				<%= link_to(network, zones_path) %><br />
+			<br />
+			<% @networksUserCanGo.each do |network| %>
+			<div class="asidebutton active_left"><br />
+			<%= link_to(user_omniauth_authorize_path(network.to_sym)) do %>
+  				<span class="icon-#{network} aside-internal-button"></span> 
+			<% end %>
+
 			</div>	
-		<% end %>
-		<% if @networksUserCanAdd != [] %>
-		<%= link_to("add Net", new_network_path) %>
-		<% end %>
+			<% end %>
 		</div>
-		
+		<div class="box scrollBar">
 			<%= yield %>
 			
-		
+		</div>	
 
 
 	</body>

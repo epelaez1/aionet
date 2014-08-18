@@ -1,0 +1,18 @@
+{
+  "fonts": [
+    "iconvault_885c2b60a1d72f1e55e813ddaada58de.ttf",
+    "iconvault_885c2b60a1d72f1e55e813ddaada58de.woff",
+    "iconvault_885c2b60a1d72f1e55e813ddaada58de.eot",
+    "iconvault_885c2b60a1d72f1e55e813ddaada58de.svg"
+  ],
+  "templates": [
+    "iconvault-preview.html",
+    "iconvault-preview.css"
+  ],
+  "file_name": "iconvault_885c2b60a1d72f1e55e813ddaada58de",
+  "glyphs": [
+    "gmail",
+    "plus",
+    "twitter"
+  ]
+}
