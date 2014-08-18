@@ -18,7 +18,7 @@ class ZonesController < ApplicationController
 		end
 	end
 	def social
-		binding.pry
+		
 		if hasUserThisZone?("social")	
 			@client = Twitter::REST::Client.new do |config|
 		      config.consumer_key        = ENV['TWITTER_KEY']
