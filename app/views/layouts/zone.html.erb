@@ -13,7 +13,7 @@
 			<div>
 					<% if @zonesToGo %>
 						<% @zonesToGo.each do |zone| %>
-						 , <%= link_to(zone, zone_path(:zone => zone)) %>
+						 , <%= link_to(zone, zones_path(:zone => zone)) %>
 						<% end %>
 					<% end %>
 
