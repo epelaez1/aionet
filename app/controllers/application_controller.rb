@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
 	private
 
 	def allNetworks 
-	  	allnetworks = {"social" => ["twitter"]}
+	  	allnetworks = {"social" => ["twitter"], "email" => ["google_oauth2"]}
 	end
 
 	def allZones
-		allzones = ["social"]
+		allzones = ["social", "email"]
 	end
 	
 	def zonesUserHas

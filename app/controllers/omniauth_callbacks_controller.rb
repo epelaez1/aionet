@@ -1,4 +1,9 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController   
+    def google_oauth2
+    	auth = env["omniauth.auth"]
+
+    	binding.pry
+    end
     def twitter
       	auth = env["omniauth.auth"]
       

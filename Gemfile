@@ -40,6 +40,7 @@ gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'twitter'
+gem 'omniauth-google-oauth2'
 group :development do
 	gem 'pry-rails' 
 	gem 'sqlite3'
