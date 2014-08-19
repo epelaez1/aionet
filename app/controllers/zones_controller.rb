@@ -43,8 +43,8 @@ class ZonesController < ApplicationController
 	      config.access_token        = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").token
 	  	  config.access_token_secret = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").secret_token
 	    end		
-		lastTweetId = params[:tweet_id]
-		render :json => @client.home_timeline
+		lastTweetId = params[:last_tweet]
+		render :json => @client.home_timeline(:max_id => lastTweetId)
 	end
 	def new
 		if canUserAddNewZone?
