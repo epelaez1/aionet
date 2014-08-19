@@ -45,6 +45,7 @@ class ZonesController < ApplicationController
 	    end		
 		lastTweetId = params[:last_tweet]
 		render :json => @client.home_timeline(:max_id => lastTweetId)
+		
 	end
 	def new
 		if canUserAddNewZone?
