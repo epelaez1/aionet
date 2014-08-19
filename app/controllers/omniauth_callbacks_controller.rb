@@ -2,7 +2,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def google_oauth2
     	auth = env["omniauth.auth"]
     	
-    	render :json => auth
+    	redirect_to zones_path(:zone => 'email')
     end
     def twitter
       	auth = env["omniauth.auth"]
