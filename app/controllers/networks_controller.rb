@@ -2,7 +2,7 @@ class NetworksController < ApplicationController
 	before_action :authenticate_user!
 	layout 'networks'
 	def index
-		redirect_to 'networks/#{params[:network]}'
+		redirect_to '/networks/#{params[:network]}'
 	end
 
 	def new
