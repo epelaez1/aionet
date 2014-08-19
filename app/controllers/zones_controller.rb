@@ -37,6 +37,12 @@ class ZonesController < ApplicationController
 		end
 	end
 	def loadMoreTweets
+		@client = Twitter::REST::Client.new do |config|
+	      config.consumer_key        = ENV['TWITTER_KEY']
+	      config.consumer_secret     = ENV['TWITTER_SECRET_KEY']
+	      config.access_token        = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").token
+	  	  config.access_token_secret = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").secret_token
+	    end		
 		lastTweetId = params[:tweet_id]
 		@client.home_timeline.to_json
 	end
