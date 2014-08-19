@@ -24,8 +24,8 @@ class ZonesController < ApplicationController
 			@client = Twitter::REST::Client.new do |config|
 		      config.consumer_key        = ENV['TWITTER_KEY']
 		      config.consumer_secret     = ENV['TWITTER_SECRET_KEY']
-		      config.access_token        = ENV['TWITTER_TOKEN']
-		  	  config.access_token_secret = ENV['TWITTER_SECRET_TOKEN']
+		      config.access_token        = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").token
+		  	  config.access_token_secret = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").secret_token
 	    	end
 			@networksUserCanGo = networksUserHasAt("social")
 			@networksUserCanAdd = networksUserHasntAt("social")
@@ -35,6 +35,10 @@ class ZonesController < ApplicationController
 			redirect_to root_path
 			return
 		end
+	end
+	def loadMoreTweets
+		lastTweetId = params[:tweet_id]
+		@client.home_timeline.to_json
 	end
 	def new
 		if canUserAddNewZone?
