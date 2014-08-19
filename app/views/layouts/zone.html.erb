@@ -14,7 +14,7 @@
 			<div class="asideContent">
 			<% @networksUserCanGo.each do |network| %>
 			<div class="asideButtonBox activeAside">
-			<%= link_to(user_omniauth_authorize_path(network.to_sym)) do %>
+			<%= link_to(networks_path(:network => network)) do %>
   				<span class="icon-<%=network%> aside-internal-button"></span> 
 			<% end %>
 

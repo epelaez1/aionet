@@ -1,7 +1,10 @@
 class NetworksController < ApplicationController
 	before_action :authenticate_user!
 	layout 'networks'
-		
+	def index
+		redirect_to 'networks/#{params[:network]}'
+	end
+
 	def new
 		if !params[:zone]
 			redirect_to root_path
@@ -17,6 +20,10 @@ class NetworksController < ApplicationController
 			return
 		end
 	end
+	def twitter
+		redirect_to root_path
+	end
+
 	
 	
 end
