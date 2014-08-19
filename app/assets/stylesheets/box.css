@@ -1,0 +1,33 @@
+.box{
+	height 				:100%;
+	overflow			:auto; 
+	background-color		:#B399CF;	 
+	margin-left			:70px; 
+}
+.miniBox{	
+	width				:360px;
+	height				:100%;
+	display				:inline-block;
+
+
+}
+.miniboxHeader{
+	height				:40px;
+	font-size			:20px;
+	font-weight			:bolder;
+	color: #B399CF;
+	padding-top: 6px;
+	text-align: center; 
+
+}
+.miniboxBody{
+	overflow			:auto; 
+	height				:90%;
+	background-color	:white 
+
+}
+.headerIcon{
+	height				:80%;
+	width 				:auto;
+	position:absolute;
+}

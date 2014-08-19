@@ -1,10 +1,18 @@
-Add Zone  <br />
+<link href='http://fonts.googleapis.com/css?family=Lato|Ubuntu|Indie+Flower' rel='stylesheet' type='text/css'>
 
-<% @zonesUserCanAdd.each do |zone| %>
-	<div>
-		<%= form_for @newzone do |f| %>
+<p class="magicSentence">Add Zone</p>
+<center>
+<div class="box">
+	
+	<% @zonesUserCanAdd.each do |zone| %>
+		<div class="buttonBox"><%= form_for @newzone do |f| %>
 		    <%= hidden_field_tag 'zone', zone  %>
-			<%= f.submit zone, class: "socialbutton" %>
+	
+			
+				<%= f.submit zone, class: "socialbutton button" %>
+			
+		</div>	
 		<% end %>
-	</div>
-<% end %>
+	<% end %>
+</div>
+</center>

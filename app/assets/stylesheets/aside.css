@@ -1,0 +1,79 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('/fonts/icomoon.eot?-788dgy');
+	src:url('/fonts/icomoon.eot?#iefix-788dgy') format('embedded-opentype'),
+		url('/fonts/icomoon.woff?-788dgy') format('woff'),
+		url('/fonts/icomoon.ttf?-788dgy') format('truetype'),
+		url('/fonts/icomoon.svg?-788dgy#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-plus:before {
+	content: "\e602";
+}
+.icon-gmail:before {
+	content: "\e603";
+}
+.icon-twitter:before {
+	content: "\e604";
+}
+.icon-home:before {
+	content: "\e600";
+}
+.icon-settings:before {
+	content: "\e605";
+}
+.icon-googleplus:before {
+	content: "\e601";
+}
+
+.aside {
+	width				:70px;
+	background-color	:#412E66;
+	text-align			:justify;
+	position			:fixed; 
+	height 				:100%;
+}
+.asideButtonBox{
+	max-height			:50px;
+}
+.asidebutton:hover {
+	border-right		:5px solid #EAE0F7 ;
+}
+.aside-internal-button{
+	color 				:#B399CF;
+	width 				:100%;
+	font-size			:40px; 
+}
+.aside-internal-button:hover{
+	color 				:#EAE0F7;
+
+}
+.activeAside{
+	border-right		:5px solid #B399CF;
+}
+.asideContent{
+	padding-top			:10px;
+	padding-left		:6px;
+}
+.icon-settings{
+	bottom: 18px;
+	position: absolute;
+	font-size: 40px;
+	color: #B399CF;
+}

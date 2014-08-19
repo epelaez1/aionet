@@ -1,0 +1,65 @@
+<link href='http://fonts.googleapis.com/css?family=Lato|Ubuntu|Indie+Flower' rel='stylesheet' type='text/css'>
+<body>
+	<p class="magicSentence">Add a new zone:
+	</p>
+	<center>
+	<div class="box">
+		<div class="buttonBox">
+			<form>
+				<input type="submit"class="button"  >
+			</form>	
+		</div>
+		<div class="buttonBox">
+			<form>
+				<input type="submit"class="button"  >
+			</form>	
+		</div>
+		<div class="buttonBox">
+			<form>
+				<input type="submit"class="button"  >
+			</form>	
+		</div>
+	</div>
+	</center>
+
+</body>
+<style>
+.button{
+	background-color		:#B399CF;
+	border					:0px solid blue;
+	width					:100%;
+	height					:100%;
+	border-radius			:35px;
+	color 					:#412E66;
+	font-size				:40px;
+	font-weight				:bolder;	  
+	font-family				: "Indie Flower";
+}
+.buttonBox{
+	height				:124px;
+	width				:200px;
+	display				:inline-block; 
+	margin:15px;
+
+	
+}
+.button:hover{
+	background-color		:#EAE0F7;
+}
+.box{
+	max-width				:660px; 
+}
+
+
+body{
+	background-color		:#412E66;
+
+}
+.magicSentence{
+	font-size				: 65px;
+	color 					: white;
+	font-weight				: bolder;
+	font-family				: "Indie Flower";
+	margin-top				:30px; 
+
+}

@@ -1,0 +1,18 @@
+span{
+	display					:inline-block;
+}
+.scrollBar::-webkit-scrollbar{
+  width         			:10px;
+  border-radius   			:20vw;
+  background-color  		:white;  
+}
+.scrollBar::-webkit-scrollbar-thumb {
+  width         			:20px;
+  background-color  		:rgba(120, 164, 240, 0.94);
+  border-radius   			:20vw; 
+  -webkit-transition: background-color 1s; 
+}
+.scrollBar::-webkit-scrollbar-thumb:hover {
+  background-color  		:rgba(66, 135, 255, 1);   
+
+}

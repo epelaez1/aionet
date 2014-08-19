@@ -1,0 +1,57 @@
+.twitterHeader{
+		background-color	:#5d3c99;
+		border-bottom		:4px solid #8868c4  
+}
+.tweet{
+	position			:static;
+	background-color	:white; 
+ 	font-family			:Arial,Verdana,sans-serif;
+ 	margin 				:2px;
+ 	padding				:6px;
+ 	min-height			:60px ;
+ 	line-height			:1.28578;
+ 	width				:336px;
+}
+.tweetBody{
+	display				:inline-block;
+}
+
+.tweetImage{
+	border-radius		:15%;
+	height				:45px; 
+}
+.tweetImageBox{
+	width				:45px;
+	float				:left;
+	margin-right		:10px;
+	display				:inline-block;
+
+}
+.tweetBodyText{
+	font-size			:14px;
+	text-align			:left; 
+	width:250px;
+}
+
+.tweetAuthor{
+ 	
+	font-size			:13px; 
+	font-weight			:bold; 
+	overflow 			:hidden;
+	text-overflow		:ellipsis;
+	max-width			:280px;
+}
+.username{
+	font-weight			:normal;
+	display				:inline-block; 
+	overflow 			:hidden;
+	text-overflow		:ellipsis;
+	max-width			:130px;
+	font-size: 12px;
+	margin-bottom: -1%;
+}
+.retweeter{
+	font-size			:12px; 
+	text-align			:center;
+}
+

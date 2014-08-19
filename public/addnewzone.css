@@ -1,0 +1,40 @@
+.button{
+	background-color		:#B399CF;
+	border					:0px solid blue;
+	width					:100%;
+	height					:100%;
+	border-radius			:35px;
+	color 					:#5d3c99;
+	font-size				:40px;
+	font-weight				:bolder;	  
+	font-family				: "Indie Flower";
+	display					:inline-block 
+}
+.buttonBox{
+	height				:124px;
+	width				:200px;
+	display				:inline-block; 
+	margin:15px;
+
+	
+}
+.button:hover{
+	background-color		:#EAE0F7;
+}
+.box{
+	max-width				:700px; 
+}
+
+
+body{
+	background-color		:#412E66;
+
+}
+.magicSentence{
+	font-size				: 65px;
+	color 					: #B399CF;
+	font-weight				: bolder;
+	font-family				: "Indie Flower";
+	margin-top				:30px; 
+
+}

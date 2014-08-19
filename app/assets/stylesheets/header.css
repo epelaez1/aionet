@@ -1,0 +1,16 @@
+.superHeader {
+ 	text-align			: center;
+ 	font-family			:'Coming Soon', cursive;
+	background-color	:#412E66;
+	height				:10%;
+	top 				:0px;
+	width 				:100%;
+	right 				:0px;
+	position			:fixed !important;
+	color 				:#B399CF;
+	padding-top 		:9px;
+}
+.activeHeader{
+	border-bottom: 5px solid #B399CF;
+}
+

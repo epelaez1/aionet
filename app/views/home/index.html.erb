@@ -1,0 +1,50 @@
+<% @client.user_timeline("misterpelaez", :count => 20).each do |tweet| %>
+	
+	<% if tweet.retweet? %>
+		
+		<div class="tweet" >
+			<div class="retweeter">
+				@<%=tweet.user.user_name%> retweetted
+			</div>
+			<div class="tweetImageBox">
+				<%=image_tag src=tweet.retweeted_tweet.user.profile_image_url, :class => "tweetImage" %>
+			</div>
+			<div class="tweetBody">
+				<div class="tweetAuthor">
+					<%=tweet.retweeted_tweet.user.name%>
+					<div class="username"> 
+						@<%=tweet.retweeted_tweet.user.user_name%>
+					</div>
+				</div>
+				<div class="tweetBodyText">
+					<%=  tweet.text[2..-1]%>
+				</div>
+			</div>
+			<div class="tweetFooter">
+			</div>
+				
+		</div>
+		<hr>
+	<% else %>
+		<div class="tweet" >
+			<div class="tweetImageBox">
+				<%=image_tag src=tweet.user.profile_image_url, :class => "tweetImage" %>
+			</div>
+			<div class="tweetBody">
+					<div class="tweetAuthor">
+						<%=tweet.user.name%>
+						<div class="username"> @<%=tweet.user.user_name%>
+						</div>
+					</div>
+				<div class="tweetBodyText">
+					<%=  tweet.text%>
+				</div>
+			</div>
+			<div class="tweetFooter">
+			</div>
+				
+		</div>
+		<hr>
+	<% end %>
+
+<% end %>

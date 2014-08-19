@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def allZones
-		allzones = ["social", "email"]
+		allzones = ["social", "email", "cacaman", "pedoman","caragato"]
 	end
 	
 	def zonesUserHas

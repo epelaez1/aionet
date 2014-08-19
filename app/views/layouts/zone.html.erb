@@ -9,37 +9,25 @@
 	</head>
 
 	<body>
-		<div class="superHeader" >
-			<div>
-					<% if @zonesToGo %>
-						<% @zonesToGo.each do |zone| %>
-						 , <%= link_to(zone, zones_path(:zone => zone)) %>
-						<% end %>
-					<% end %>
-
-					<% if @zonesToAdd %>
-						<%= link_to("Add Zone", new_zone_path) %>
-					<% end %>
-			      	Logged in as <strong><%= current_user.email %></strong>.
-			      	<%= link_to 'Edit profile', edit_user_registration_path %> |
-			      	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-		    </div>
-		</div>
+		
 		<div class="aside">
-			<br />
+			<div class="asideContent">
 			<% @networksUserCanGo.each do |network| %>
-			<div class="asidebutton active_left"><br />
+			<div class="asideButtonBox activeAside">
 			<%= link_to(user_omniauth_authorize_path(network.to_sym)) do %>
   				<span class="icon-<%=network%> aside-internal-button"></span> 
 			<% end %>
 
 			</div>	
 			<% end %>
+			<div class="asideButtonBox icon-settings">
+			</div>
 		</div>
-		<div class="box scrollBar">
+		</div>
+	
 			<%= yield %>
 			
-		</div>	
+			
 
 
 	</body>
