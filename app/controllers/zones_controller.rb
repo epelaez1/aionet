@@ -44,7 +44,7 @@ class ZonesController < ApplicationController
 	  	  config.access_token_secret = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").secret_token
 	    end		
 		lastTweetId = params[:last_tweet]
-		render :json => @client.home_timeline(:max_id => lastTweetId, :count => 10)
+		render :json => @client.home_timeline(:max_id => lastTweetId).take(3)
 
 	end
 	def new
