@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :zones, :except => :show
   resources :networks, :except => :show
   get 'zones/social' => 'zones#social'
+  get 'zones/moretweets' => 'zones#loadMoreTweets'
   # Example resource route with options:
   #   resources :products do
   #     member do
