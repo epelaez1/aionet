@@ -13,18 +13,19 @@
 		<div class="aside">
 			<div class="asideContent">
 			<% @networksUserCanGo.each do |network| %>
-			<div class="asideButtonBox activeAside">
-			<%= link_to(networks_path(:network => network)) do %>
-  				<span class="icon-<%=network%> aside-internal-button"></span> 
+				<div class="asideButtonBox activeAside">
+					<%= link_to(networks_path(:network => network)) do %>
+		  				<span class="icon-<%=network%> aside-internal-button"></span> 
+					<% end %>
+				</div>	
 			<% end %>
-			<% if @canUserAddNewZone %> 
-				<%= link_to(new_networks_path(:zone => @currentZone)) do %>
-	  				<span class="icon-<%=network%> aside-internal-button"></span> 
+			<div class="asideButtonBox">
+				<% if @canUserAddNewZone %> 
+					<%= link_to(new_networks_path(:zone => @currentZone)) do %>
+		  				<span class="icon-plus aside-internal-button"></span> 
+					<% end %>
 				<% end %>
-			<% end %>
-
-			</div>	
-			<% end %>
+			</div>
 			<div class="asideButtonBox ">
 				<div  id="settingsbutton"class="icon-settings">
 					<ul id="settingsmenu"class="ul">
