@@ -32,3 +32,6 @@
 	width 				:auto;
 	position			:absolute;
 }
+#end {
+	height: 20px;
+}
