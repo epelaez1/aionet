@@ -29,7 +29,6 @@ class ZonesController < ApplicationController
 	    	end
 			@networksUserCanGo = networksUserHasAt("social")
 			@networksUserCanAdd = networksUserHasntAt("social")
-			
 			render 'social'
 			return
 		else
@@ -75,11 +74,7 @@ class ZonesController < ApplicationController
 	end
 	def canUserAddNewZone?
 		zonesUserHasnt.count != 0
-	end
-	
-	
-	
-	
+	end	
 	
 	def addZoneToUser(zone)
 		addzone = current_user.zones.new :zone => zone

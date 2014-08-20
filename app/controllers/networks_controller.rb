@@ -13,7 +13,7 @@ class NetworksController < ApplicationController
 		if hasUserThisZone?(params[:zone])
 			@currentZone = params[:zone]
 			@networksToAdd = networksUserHasntAt(params[:zone])
-			render 'new'
+			render 'new', :layout => 'newzone'
 			return
 		else
 			redirect_to root_path

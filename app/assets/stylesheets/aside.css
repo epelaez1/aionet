@@ -51,6 +51,8 @@
 }
 .asideButtonBox{
 	max-height			:50px;
+	padding-left		:5px;
+	padding-top 		:2px;
 }
 .asidebutton:hover {
 	border-right		:5px solid #EAE0F7 ;
@@ -68,12 +70,42 @@
 	border-right		:5px solid #B399CF;
 }
 .asideContent{
-	padding-top			:10px;
+	padding-top			:9vh;
 	padding-left		:6px;
 }
 .icon-settings{
-	bottom: 18px;
+	bottom: 8px;
 	position: absolute;
 	font-size: 40px;
 	color: #B399CF;
+	width: 233px;
+}
+.li{
+	display				:inline-block;
+}
+.ul{
+	
+	display				:none;
+}
+.visible{
+	border-left			:4px solid #B399CF;
+	position			:absolute;
+	margin-left			:59px;
+	background-color	:#412E66;
+	bottom				:0px;
+	width 				:155px;
+	border-radius		:5px;
+	border-radius		:0px 15px 15px 0px;
+}
+hr{
+	width				:95%;
+}
+li {
+
+	font-size 			:20px;
+	margin-left			:5px;
+}
+li a{
+	color 				:#B399CF;
+	text-decoration		:none;
 }

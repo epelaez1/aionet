@@ -1,17 +1,21 @@
-<h2>Log in</h2>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="/addnewzone.css">
+	<div class="magicSentence">Log in</div>
+	<center>
+		<div class="loginBox">
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+		  <div class="input"><%= f.label :login %><br />
+		  <%= f.text_field :login, autofocus: true, :class=>"input" %></div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :login %><br />
-  <%= f.text_field :login, autofocus: true %></div>
+		  <div class="input"><%= f.label :password %><br />
+		    <%= f.password_field :password, autocomplete: "off", :class=>"input" %></div>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+		  <% if devise_mapping.rememberable? -%>
+		    <div ><%= f.check_box :remember_me %> <%= f.label :remember_me, :class=>"input" %></div>
+		  <% end -%>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
-
-  <div><%= f.submit "Log in" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+		  <div><%= f.submit "Log in", :class=>"submit" %></div>
+		<% end %>
+		<%= render "devise/shared/links" %>
+	</div>
+</center>

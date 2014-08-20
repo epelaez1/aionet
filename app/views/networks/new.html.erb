@@ -1,10 +1,15 @@
-You are now at <%= @currentZone %> zone. 
-You can add the next networks:
-<% @networksToAdd.each do |network| %>
+<link href='http://fonts.googleapis.com/css?family=Lato|Ubuntu|Indie+Flower' rel='stylesheet' type='text/css'>
 
-<div class="<%=network%>add">
-	<%= link_to(network, user_omniauth_authorize_path(network.to_sym)) %><br />
+<p class="magicSentence">Add Zone</p>
+<center>
+	<div class="box">
+	<% @networksToAdd.each do |network| %>
+	<%= link_to(user_omniauth_authorize_path(network.to_sym)) do %>
+	<div class="buttonBox">
+		<button class="button"><%= network %></button>
+	</div>
+	<% end %>
+	<% end %>
 </div>
-<% end %>
-
+</center>
 

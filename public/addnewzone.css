@@ -1,3 +1,24 @@
+body{
+	background-color		:#412E66;
+
+}
+a{
+	text-decoration			:none;
+	color 					:#412E66; 
+	padding-top				:10px 
+}
+.submit{
+	background-color		:#B399CF;
+	border					:0px solid blue;
+	color 					:#5d3c99;
+	font-weight				:bolder;
+	font-family				:"Indie Flower";
+	width 					:80px;
+	height					:30px;
+	margin					:10px;
+	font-size				:19px;
+
+}
 .button{
 	background-color		:#B399CF;
 	border					:0px solid blue;
@@ -7,14 +28,15 @@
 	color 					:#5d3c99;
 	font-size				:40px;
 	font-weight				:bolder;	  
-	font-family				: "Indie Flower";
-	display					:inline-block 
+	font-family				:"Indie Flower";
+	display					:inline-block;
+
 }
 .buttonBox{
-	height				:124px;
-	width				:200px;
-	display				:inline-block; 
-	margin:15px;
+	height					:124px;
+	width					:200px;
+	display					:inline-block; 
+	margin 					:15px;
 
 	
 }
@@ -24,17 +46,25 @@
 .box{
 	max-width				:700px; 
 }
-
-
-body{
-	background-color		:#412E66;
+.magicSentence{
+	font-size				:65px;
+	color 					:#B399CF;
+	font-weight				:bolder;
+	font-family				:"Indie Flower";
+	margin-top				:30px; 
+	height					:15vh;
+	margin-left				:20px;	
 
 }
-.magicSentence{
-	font-size				: 65px;
-	color 					: #B399CF;
-	font-weight				: bolder;
-	font-family				: "Indie Flower";
-	margin-top				:30px; 
-
+.loginBox{
+	height					:85vh;
+	overflow				:hidden;
+	width 					:360px;
+	font-family				:"Indie Flower";
+	text-align				:left;
+}
+.input{
+	margin-top				:15px;
+	font-size				:22px; 	 
+	color 					:#B399CF;
 }
