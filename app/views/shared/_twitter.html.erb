@@ -5,7 +5,7 @@ Twitter
 <div class="miniboxBody scrollBar">
 
 <% @client.home_timeline.each do |tweet| %>
-	
+	<% binding.pry %>
 	<% if tweet.retweet? %>
 		
 		<div class="tweet" id="<%=tweet.id%>" >

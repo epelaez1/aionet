@@ -29,6 +29,7 @@ class ZonesController < ApplicationController
 	    	end
 			@networksUserCanGo = networksUserHasAt("social")
 			@networksUserCanAdd = networksUserHasntAt("social")
+			
 			render 'social'
 			return
 		else
