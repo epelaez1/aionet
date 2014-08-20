@@ -20,7 +20,7 @@
 				</div>	
 			<% end %>
 			<div class="asideButtonBox">
-				<% if @canUserAddNewZone %> 
+				<% if @networksUserCanAdd != [] %> 
 					<%= link_to(new_network_path(:zone => @currentZone)) do %>
 		  				<span class="icon-plus aside-internal-button"></span> 
 					<% end %>
