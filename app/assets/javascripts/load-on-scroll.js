@@ -1,7 +1,7 @@
 $(function  () {
 	var lastTweetId = $('.tweet').last().attr('id');
-	$('#end').waypoint(function(direction){
-		console.log("hola");
+	$('.tweet').last().on('click', function(){
+
 		$.ajax('http://aionet.herokuapp.com/zones/moreTweets?last_tweet=' + lastTweetId ).done(function(data){
 			for (var i = 1; i < data.length; i++) {
 				if (data[i].retweeted_status){  					
@@ -14,5 +14,4 @@ $(function  () {
 		});
 	});
 });
-
 
