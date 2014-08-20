@@ -17,6 +17,11 @@
 			<%= link_to(networks_path(:network => network)) do %>
   				<span class="icon-<%=network%> aside-internal-button"></span> 
 			<% end %>
+			<% if @canUserAddNewZone %> 
+				<%= link_to(new_networks_path(:zone => @currentZone)) do %>
+	  				<span class="icon-<%=network%> aside-internal-button"></span> 
+				<% end %>
+			<% end %>
 
 			</div>	
 			<% end %>
