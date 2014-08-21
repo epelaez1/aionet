@@ -22,5 +22,11 @@ $(document).ready(function() {
 			 	});
 			};
 		})
+		$(".writeTweets").on("click", function(){
+			$("#HTheader").toggleClass("headerwritting", 1000, "easeOutSine");
+			$("#HTbody").toggleClass("bodywritting", 1000, "easeOutSine");
+			$("#tweetWritter").toggleClass( "nodisplay", 1000, "easeOutSine");
+		})
+
 	});
 });

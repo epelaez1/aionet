@@ -1,8 +1,17 @@
 <section class="miniBox ">
-<div class="miniboxHeader twitterHeader">
-Twitter
-</div>	
-<div class="miniboxBody scrollBar">
+<div id="HTheader" class="miniboxHeader twitterHeader">
+<div class="boxtitle"> Twitter </div>
+<div class="icon-quill writeTweets"></div>
+<div id="tweetWritter" class="tweetwritter nodisplay">
+	<form class="formwritter">
+		<label class="labelwritter">Text:</label>
+		<textarea placeholder="Hmmm..?" maxlength=140 class="inputwritter" ></textarea>
+		<button class="buttonwritter"> Tweet </button>
+	</form>
+</div>
+</div>
+
+<div id="HTbody" class="miniboxBody scrollBar">
 
 <% @timeline.each do |tweet| %>
 	

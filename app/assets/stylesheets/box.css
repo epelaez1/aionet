@@ -13,10 +13,10 @@
 }
 .miniboxHeader{
 	height				:5vh;
-	font-size			:20px;
-	font-weight			:bolder;
+	font-size			:3vh;
 	color 				:#B399CF;
-	padding-top			:2vh;
+	padding-top			:1vh;
+	padding-bottom		:1vh;
 	text-align			:center;
 	border-bottom		:4px solid #B399CF;
 
@@ -30,4 +30,66 @@
 .end{
 	height				:20px;
 	width				:100px;
+}
+.writeTweets{
+	background-color 	: rgba(162, 105, 211, 0.35);
+	border-radius 		: 5px;
+	padding 			: 1vh;
+	display 			: inline-block;
+}
+.boxtitle{
+	padding 			: 1vh;
+	display				: inline-block;
+}
+.nodisplay{
+	display				: none;
+}
+.labelwritter{
+	display				: block;
+}
+.inputwritter{
+	margin-top 			: 1vh;
+	height 				: 25vh;
+	width 				: 91%;
+	border-radius 		: 8px;
+	resize				: none;
+	font-family 		: inherit;
+	font-size 			: 1rem;
+	border 				: 0px;
+}
+.headerwritting{
+	height				: 52vh;
+
+}
+.bodywritting{
+	height				: 45vh;
+
+}
+.tweetwritter{
+	padding-left		: 7%;
+	background-color	: rgb(57, 38, 80);
+	height				: 43vh;
+	width				: 81%;
+	border-radius		: 16px;
+	padding-top			: 10px;
+	margin-left			: 6%;
+	margin-top			: 1vh;
+}
+.formwritter{
+	text-align			: left;
+	font-size			: 2vh;
+	font-family			: "Coming Soon";
+
+}
+.buttonwritter{
+	margin-left 		: 56%;
+	margin-top			: 2vh;
+	border 				: none;
+	background-color 	: #B399CF;
+	color 				: #5d3c99;
+	font-weight 		: bolder;
+	font-family 		: inherit;
+	width 				: 80px;
+	height 				: 3vh;
+	font-size 			: 2vh;
 }
