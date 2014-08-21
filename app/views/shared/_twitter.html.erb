@@ -8,7 +8,7 @@ Twitter
 	
 	<% if tweet.retweet? %>
 		
-		<div class="tweet" id="<%=tweet.id%>" >
+		<div class="tweet hometimeline" id="<%=tweet.id%>" >
 			<div class="retweeter" >
 				@<%=tweet.user.user_name%> retweetted
 			</div>
@@ -32,7 +32,7 @@ Twitter
 		</div>
 		<hr>
 	<% else %>
-		<div class="tweet" id="<%=tweet.id%>">
+		<div class="tweet hometimeline" id="<%=tweet.id%>">
 			<div class="tweetImageBox">
 				<%=image_tag src=tweet.user.profile_image_url, :class => "tweetImage" %>
 			</div>
