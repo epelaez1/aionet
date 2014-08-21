@@ -12,28 +12,22 @@
 
 }
 .miniboxHeader{
-	height				:7vh;
+	height				:5vh;
 	font-size			:20px;
 	font-weight			:bolder;
 	color 				:#B399CF;
 	padding-top			:2vh;
 	text-align			:center;
-	border-bottom		:4px solid #B399CF  
+	border-bottom		:4px solid #B399CF;
 
 }
 .miniboxBody{
 	overflow			:auto; 
-	height				:90vh;
+	height				:92vh;
 	background-color	:white;
 	word-break			:break-word;
-
 }
-.headerIcon{
-	height				:80%;
-	width 				:auto;
-	position			:absolute;
-}
-#end {
-	height: 20px;
-	width: 100px;
+.end{
+	height				:20px;
+	width				:100px;
 }

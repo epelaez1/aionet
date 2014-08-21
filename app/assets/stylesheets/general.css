@@ -1,3 +1,78 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('/fonts/icomoon.eot?7vbzo5');
+	src:url('/fonts/icomoon.eot?#iefix7vbzo5') format('embedded-opentype'),
+		url('/fonts/icomoon.woff?7vbzo5') format('woff'),
+		url('/fonts/icomoon.ttf?7vbzo5') format('truetype'),
+		url('/fonts/icomoon.svg?7vbzo5#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: "HelveticaNeue";
+    src: url(/fonts/HelveticaNeue.ttf) format("truetype");
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gmail:before {
+	content: "\e600";
+}
+.icon-home:before {
+	content: "\e601";
+}
+.icon-newspaper:before {
+	content: "\e607";
+}
+.icon-quill:before {
+	content: "\e60e";
+}
+.icon-image:before {
+	content: "\e608";
+}
+.icon-play:before {
+	content: "\e609";
+}
+.icon-film:before {
+	content: "\e60a";
+}
+.icon-users:before {
+	content: "\e602";
+}
+.icon-settings:before {
+	content: "\e603";
+}
+.icon-cloud-upload:before {
+	content: "\e60b";
+}
+.icon-plus:before {
+	content: "\e604";
+}
+.icon-mail:before {
+	content: "\e60c";
+}
+.icon-googleplus:before {
+	content: "\e605";
+}
+.icon-twitter:before {
+	content: "\e606";
+}
+.icon-paperplane:before {
+	content: "\e60d";
+}
+
 span{
 	display					:inline-block;
 }
@@ -15,4 +90,7 @@ span{
 .scrollBar::-webkit-scrollbar-thumb:hover {
   background-color  		:rgba(66, 135, 255, 1);   
 
+}
+div {
+	font-family: 'HelveticaNeue', Verdana, Tahoma;
 }

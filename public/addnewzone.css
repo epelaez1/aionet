@@ -57,19 +57,27 @@ a{
 
 }
 .loginBox{
-	height					:85vh;
-	overflow				:hidden;
 	width 					:360px;
 	font-family				:"Indie Flower";
 	text-align				:left;
 }
-.input{
+.inputHead{
 	margin-top				:10px;
 	margin-bottom			:20px;
 	font-size				:22px; 	 
 	color 					:#B399CF;
+	font-weight				:normal; 
 }
-.input input {
-	color 					:black;
-
+.inputText{
+	font-size				:22px; 	 
+	color 					:#412E66;
+	margin-top				:10px;
+}
+#error_explanation{
+	width					:360px;
+	font-size				:35px;
+	text-align				:left;
+	display					:inline-block;
+	float					:right;
+	margin-right			:140px;
 }

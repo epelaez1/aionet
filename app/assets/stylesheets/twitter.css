@@ -53,4 +53,9 @@
 	font-size			:12px; 
 	text-align			:center;
 }
-
+.writeTweet{
+	font-size			: 30px;
+	float				:right;
+	color				:#B399CF;
+	margin-right		:25px;
+}

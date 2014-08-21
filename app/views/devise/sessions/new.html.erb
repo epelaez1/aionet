@@ -4,14 +4,14 @@
 	<center>
 		<div class="loginBox">
 		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-		  <div class="input"><%= f.label :login %><br />
-		  <%= f.text_field :login, autofocus: true, :class=>"input" %></div>
+		  <div class="inputHead"><%= f.label :"username or email" %><br />
+		  <%= f.text_field :login, autofocus: true, :class=>"inputText" %></div>
 
-		  <div class="input"><%= f.label :password %><br />
-		    <%= f.password_field :password, autocomplete: "off", :class=>"input" %></div>
+		  <div class="inputHead"><%= f.label :password %><br />
+		    <%= f.password_field :password, autocomplete: "off", :class=>"inputText" %></div>
 
 		  <% if devise_mapping.rememberable? -%>
-		    <div ><%= f.check_box :remember_me %> <%= f.label :remember_me, :class=>"input" %></div>
+		    <div ><%= f.check_box :remember_me %> <%= f.label :remember_me, :class=>"inputHead" %></div>
 		  <% end -%>
 
 		  <div><%= f.submit "Log in", :class=>"submit" %></div>
