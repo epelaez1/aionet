@@ -24,7 +24,8 @@
 .miniboxBody{
 	overflow			:auto; 
 	height				:90vh;
-	background-color	:white 
+	background-color	:white;
+	word-break			:break-word;
 
 }
 .headerIcon{

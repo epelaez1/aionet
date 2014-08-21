@@ -22,12 +22,14 @@ class ZonesController < ApplicationController
 			@zonesToGo = allZones - zonesUserHasnt - ["social"]
 			@canUserAddNewZone = canUserAddNewZone?	
 			@currentZone = "social"
-			@client = Twitter::REST::Client.new do |config|
+			client = Twitter::REST::Client.new do |config|
 		      config.consumer_key        = ENV['TWITTER_KEY']
 		      config.consumer_secret     = ENV['TWITTER_SECRET_KEY']
 		      config.access_token        = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").token
 		  	  config.access_token_secret = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").secret_token
 	    	end
+	    	@timeline = client.home_timeline(:count => 100)
+	    	@mentions_timeline = client.mentions_timeline(:count => 100)
 			@networksUserCanGo = networksUserHasAt("social")
 			@networksUserCanAdd = networksUserHasntAt("social")
 			render 'social'
@@ -45,7 +47,7 @@ class ZonesController < ApplicationController
 	  	  config.access_token_secret = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").secret_token
 	    end		
 		lastTweetId = params[:last_tweet]
-		render :json => @client.home_timeline(:max_id => lastTweetId).take(5)
+		render :json => @client.home_timeline(:max_id => lastTweetId).take(50)
 
 	end
 	def new
