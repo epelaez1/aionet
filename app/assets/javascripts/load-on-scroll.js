@@ -26,7 +26,20 @@ $(document).ready(function() {
 			$("#HTheader").toggleClass("headerwritting", 1000, "easeOutSine");
 			$("#HTbody").toggleClass("bodywritting", 1000, "easeOutSine");
 			$("#tweetWritter").toggleClass( "nodisplay", 1000, "easeOutSine");
-		})
+		});
+		$(".buttonwritter").on("click", function(){
+			var tweet = $(".inputwritter").val()
+			if (tweet.length != 0 && tweet.length < 141 ) {
+				$.post( "/zones/social/sendtweet", { 'tweet': tweet }).done(function(data){
+					console.log(data);
+					$("#HTheader").toggleClass("headerwritting", 1000, "easeOutSine");
+					$("#HTbody").toggleClass("bodywritting", 1000, "easeOutSine");
+					$("#tweetWritter").toggleClass( "nodisplay", 1000, "easeOutSine");
+				});
+			} else {
+
+			};
+		});
 
 	});
 });

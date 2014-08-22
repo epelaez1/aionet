@@ -51,6 +51,17 @@ class ZonesController < ApplicationController
 		render :json => @client.home_timeline(:max_id => lastTweetId).take(50)
 
 	end
+	def sendtweet
+		@client = Twitter::REST::Client.new do |config|
+	      config.consumer_key        = ENV['TWITTER_KEY']
+	      config.consumer_secret     = ENV['TWITTER_SECRET_KEY']
+	      config.access_token        = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").token
+	  	  config.access_token_secret = current_user.zones.find_by(:zone => "social").networks.find_by(:network => "twitter").secret_token
+	    end	
+	    asdf = {"data" => "ASDASDASD"}
+		binding.pry
+		params[:tweet]
+	end
 	def new
 		if canUserAddNewZone?
 			@newzone = current_user.zones.new

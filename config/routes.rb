@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'zones/social' => 'zones#social'
   get 'zones/moreTweets' => 'zones#loadMoreTweets'
   get 'networks/twitter' => 'networks#twitter'
+  get '/zones/social/sendtweet' => 'zones#sendtweet'
   # Example resource route with options:
   #   resources :products do
   #     member do
